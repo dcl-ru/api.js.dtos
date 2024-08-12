@@ -1,0 +1,43 @@
+{
+  "name": "@dcl.ru/dtos",
+  "version": "3.2.0",
+  "description": "dcl.ru API v3 data transfer objects — types, enums and zod schemas",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "./dist"
+  ],
+  "exports": [
+    "./dist/index.js"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:dcl-ru/api.js.dtos.git"
+  },
+  "keywords": [
+    "dcl",
+    "javascript",
+    "api",
+    "client",
+    "dtos"
+  ],
+  "author": "Algoritm Razvitiya LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dcl-ru/api.js.dtos/issues"
+  },
+  "homepage": "https://docs.dcl.ru",
+  "devDependencies": {
+    "@types/node": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "zod": "latest"
+  }
+}
