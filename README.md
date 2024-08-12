@@ -1,2 +1,2 @@
-# api.js
-JavaScript-клиент для dcl API v3
+# api.js.dtos
+Объекты данных dcl.ru API v3 — типы, перечисления, схемы валидации zod
