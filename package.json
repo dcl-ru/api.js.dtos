@@ -1,6 +1,6 @@
 {
   "name": "@dcl.ru/dtos",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "dcl.ru API v3 data transfer objects — types, enums and zod schemas",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
