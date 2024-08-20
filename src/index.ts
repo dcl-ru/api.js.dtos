@@ -69,6 +69,7 @@ export {
     InventoryItemFirstSchema,
     ProductSchema,
     ProductCardSchema,
+    ProductCardPassedSchema,
     ProductCardOnHomepageSchema,
     ScheduleSlotSchema,
     TariffSchema,
@@ -90,6 +91,7 @@ export type {
     InventoryItemFirstDto,
     ProductDto,
     ProductCardDto,
+    ProductCardPassedDto,
     ProductCardOnHomepageDto,
     ScheduleSlotDto,
     TariffDto,
@@ -102,6 +104,7 @@ export {
     SaleSchemas,
     ImageTypes,
     AccessTypes,
+    ProductStatuses,
     ScheduleSlotTariffsStatuses,
     SoonFilter
 } from './dtos/products.js';

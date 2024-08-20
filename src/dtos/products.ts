@@ -31,6 +31,13 @@ export enum AccessTypes {
 
 export const AccessTypesEnumSchema = z.nativeEnum(AccessTypes);
 
+export enum ProductStatuses {
+    Active = 1,
+    Passed = 2,
+}
+
+export const ProductStatusesEnumSchema = z.nativeEnum(ProductStatuses);
+
 export enum ScheduleSlotTariffsStatuses {
     AwaitingStart = 1,
     Active = 2,
@@ -144,23 +151,24 @@ export type InventoryItemFirstDto = z.infer<typeof InventoryItemFirstSchema>;
 
 export const ProductSchema = z.object({
     id: z.coerce.number(),
+    status: ProductStatusesEnumSchema,
     slug: z.string(),
     name: z.string(),
-    saleSchema: SaleSchemasEnumSchema,
+    saleSchema: SaleSchemasEnumSchema.nullable(),
     externalUrl: z.string().nullable(),
     categories: CategorySchema.array(),
     groups: GroupSchema.array(),
     tags: TagSchema.array(),
     badges: BadgeSchema.array(),
     ageRating: z.coerce.number(),
-    scheduleSlotNext: PeriodSchema,
-    scheduleSlotsMulti: z.coerce.boolean(),
+    scheduleSlotNext: PeriodSchema.nullable(),
+    scheduleSlotsMulti: z.coerce.boolean().nullable(),
     lead: z.string().nullable(),
     description: z.string().nullable(),
-    pushka: z.coerce.boolean(),
-    paused: z.coerce.boolean(),
+    pushka: z.coerce.boolean().nullable(),
+    paused: z.coerce.boolean().nullable(),
     priceFrom: z.coerce.number().nullable(),
-    soldOut: z.coerce.boolean(),
+    soldOut: z.coerce.boolean().nullable(),
     images: ImageSchema.array(),
     inventoryItems: InventoryItemSchema.array(),
 });
@@ -178,7 +186,7 @@ export const ProductCardSchema = z.object({
     pushka: z.coerce.boolean(),
     paused: z.coerce.boolean(),
     priceFrom: z.coerce.number().nullable(),
-    soldOut: z.coerce.boolean(),
+    soldOut: z.coerce.boolean().nullable(),
     scheduleSlotNext: PeriodSchema,
     scheduleSlotsMulti: z.coerce.boolean(),
     image: ImageSchema.nullable(),
@@ -191,6 +199,22 @@ export const ProductCardSchema = z.object({
 });
 
 export type ProductCardDto = z.infer<typeof ProductCardSchema>;
+
+export const ProductCardPassedSchema = z.object({
+    id: z.coerce.number(),
+    slug: z.string(),
+    name: z.string(),
+    ageRating: z.coerce.number(),
+    image: ImageSchema.nullable(),
+    inventoryItemFirst: InventoryItemFirstSchema,
+    inventoryItemsMulti: z.coerce.boolean(),
+    categories: CategorySchema.array(),
+    groups: GroupSchema.array(),
+    tags: TagSchema.array(),
+    badges: BadgeSchema.array(),
+});
+
+export type ProductCardPassedDto = z.infer<typeof ProductCardPassedSchema>;
 
 export const ProductCardOnHomepageSchema = z.object({
     id: z.coerce.number(),
