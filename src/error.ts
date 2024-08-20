@@ -3,7 +3,7 @@ import {APIErrorType} from './dtos/errors.js'
 export class APIError extends Error {
     public readonly requestId: string;
     public readonly code: number;
-    public readonly statusCode: number | undefined;
+    public readonly statusCode: number;
 
     constructor(apiError: APIErrorType, statusCode: number) {
         super(apiError.error);
