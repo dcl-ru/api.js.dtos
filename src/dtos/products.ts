@@ -273,6 +273,7 @@ export const TariffSchema = z.object({
     limitPerPerson: z.coerce.number().nullable(),
     quotaAvailable: z.coerce.number().nullable(),
     soldOut: z.coerce.boolean(),
+    inventoryItems: InventoryItemSchema.array(),
 });
 
 export type TariffDto = z.infer<typeof TariffSchema>;
