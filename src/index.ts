@@ -75,6 +75,8 @@ export {
     TariffSchema,
     TariffGroupSchema,
     ScheduleSlotTariffsSchema,
+    PromocodeSchema,
+    ExemptionSchema,
 } from './dtos/products.js';
 
 // Types
@@ -97,6 +99,8 @@ export type {
     TariffDto,
     TariffGroupDto,
     ScheduleSlotTariffsDto,
+    PromocodeDto,
+    ExemptionDto,
 } from './dtos/products.js';
 
 //Enums
