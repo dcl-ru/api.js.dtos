@@ -298,7 +298,7 @@ export type ScheduleSlotTariffsDto = z.infer<typeof ScheduleSlotTariffsSchema>;
 export const PromocodeSchema = z.object({
     id: z.coerce.number(),
     promocode: z.string(),
-    tariffId: z.coerce.number().array(),
+    tariffIds: z.coerce.number().array(),
     fixedDiscount: z.coerce.number(),
     proportionalDiscount: z.coerce.number(),
 });
@@ -308,7 +308,7 @@ export type PromocodeDto = z.infer<typeof PromocodeSchema>;
 export const ExemptionSchema = z.object({
     id: z.coerce.number(),
     exemption: z.string(),
-    tariffId: z.coerce.number().array(),
+    tariffIds: z.coerce.number().array(),
     fixedDiscount: z.coerce.number(),
     proportionalDiscount: z.coerce.number(),
 });
