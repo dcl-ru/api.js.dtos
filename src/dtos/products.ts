@@ -305,12 +305,22 @@ export const PromocodeSchema = z.object({
 
 export type PromocodeDto = z.infer<typeof PromocodeSchema>;
 
-export const ExemptionSchema = z.object({
-    id: z.coerce.number(),
-    exemption: z.string(),
-    tariffIds: z.coerce.number().array(),
-    fixedDiscount: z.coerce.number(),
-    proportionalDiscount: z.coerce.number(),
+
+export const KzhnoBenefitSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    dateTo: z.coerce.date(),
 });
 
-export type ExemptionDto = z.infer<typeof ExemptionSchema>;
+export type KzhnoBenefitDto = z.infer<typeof KzhnoBenefitSchema>;
+
+export const KzhnoSchema = z.object({
+    cardNumber: z.string(),
+    isKzhnoCard: z.coerce.boolean(),
+    isActive: z.coerce.boolean(),
+    cardType: z.string(),
+    variant: z.string(),
+    benefits: KzhnoBenefitSchema.array(),
+});
+
+export type KzhnoDto = z.infer<typeof KzhnoSchema>;
