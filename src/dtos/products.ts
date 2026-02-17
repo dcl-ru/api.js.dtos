@@ -39,6 +39,7 @@ export enum ProductStatuses {
 export const ProductStatusesEnumSchema = z.nativeEnum(ProductStatuses);
 
 export enum ScheduleSlotTariffsStatuses {
+    Unspecified = 0,
     AwaitingStart = 1,
     Active = 2,
     SoldOut = 3,
